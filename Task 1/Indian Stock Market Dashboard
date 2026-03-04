@@ -1,0 +1,68 @@
+# Indian Stock Market Dashboard 
+This project is a simple Indian Stock Market information webpage created using HTML and CSS. It presents key market information such as top gaining stocks, top losing stocks, popular companies, and major market sectors in a clean and structured layout.
+The website also includes a navigation bar, a market ticker displaying the SENSEX index, and visual stock market images to improve the user interface and user experience.
+
+# Features
+## Navigation Bar
+  - Home
+  - Market
+  - Contact
+
+### Market Indicator
+  - Displays current SENSEX value with an upward trend indicator.
+
+## Stock Market Visual Section
+  - Images representing:
+  - NSE building
+  - Stock charts
+  - Trading screens
+  - BSE building
+### Stock Information Sections
+
+## Top Gainers
+  - Reliance Industries
+  - TCS
+  - Infosys
+  - HDFC Bank
+  - ICICI Bank
+## Top Losers
+  - Adani Ports
+  - Wipro
+  - NTPC
+  - Coal India
+  - Power Grid
+
+## Popular Stocks
+  - ITC Ltd
+  - Larsen & Toubro
+  - Bajaj Finance
+  - Asian Paints
+  - Maruti Suzuki
+
+## Market Sectors
+  - Information Technology
+  - Banking
+  - Energy
+  - Pharma
+  - Automobile
+
+## Investor Query Section
+  - A section where users can submit queries related to stock market investments.
+
+## Technologies Used
+  - HTML5
+  - CSS3
+
+# Purpose of the Project
+This project was developed as part of SSPL Akash Technolabs Training to practice:
+  - Webpage layout design
+  - Navigation bar creation
+  - Section structuring
+  - Styling using CSS
+  - Presenting financial information in a clear format
+
+## Learning Outcomes
+  - Understanding webpage structure using HTML
+  - Designing responsive layout sections
+  - Styling components like cards, tables, and navigation bars
+  - Organizing financial data visually
