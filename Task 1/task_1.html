@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Indian Stock Market</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #b2ecff;
+}
+
+.header {
+    background: #01286a;
+    color: white;
+}
+
+.header h1 {
+    margin: 10px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+marquee {
+    background: #024602;
+    color: #ffffff;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.market-img {
+    background: #b2ecff;
+    text-align: center;
+}
+
+.market-img img {
+    width: 250px;
+    margin: 10px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 6px gray;
+}
+
+.blue-table {
+    border-collapse: collapse;
+    margin: 40px auto;
+    font-family: Arial, sans-serif;
+    background: #083b8a;
+}
+
+.blue-table th,
+.blue-table td {
+    border: 6px solid #083b8a;
+    padding: 14px 28px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.blue-table th {
+    background: #f6d9a7;
+    font-weight: bold;
+}
+
+.blue-table td {
+    background: #f4e6cc;
+    text-align: left;     
+    vertical-align: top;
+}
+
+.blue-table ol {
+    line-height: 28px;
+    list-style: none;
+    padding: 0;
+}
+
+.form-area {
+    background: #b2ecff;
+}
+
+fieldset {
+    border: 2px solid #0b3d91;
+    padding: 15px;
+    border-radius: 6px;
+    background: white;
+}
+
+input, textarea, select {
+    width: 95%;
+    padding: 6px;
+    margin: 5px 0;
+}
+
+button {
+    background: #0b3d91;
+    color: white;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #06245c;
+}
+
+.footer {
+    background: #0b3d91;
+    color: white;
+    text-align: center;
+}
+
+.footer-box {
+    background: white;
+    color: black;
+    border: 1px solid black;
+    display: inline-block;
+    padding: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<table width="100%" class="header">
+<tr>
+<td width="400" align="center"><h1><i>Indian Stock Market</i></h1></td>
+<td width="500"></td>
+<td class="nav"><a href="#">Home</a></td>
+<td class="nav"><a href="#">Market</a></td>
+<td class="nav"><a href="#">Contact</a></td>
+</tr>
+</table>
+
+<marquee>
+SENSEX ↑ 74,250.55 &nbsp;&nbsp;&nbsp;
+Invest in INDIA, “इंडिया का भाव बढ़ने वाला है.”
+NIFTY ↑ 22,510.20
+</marquee>
+
+<table width="100%" class="market-img">
+<tr align="center">
+<td><img src="D:\bunissness_analytics_course\Intenship_sarjen 2026\Practicals\week_4\wallpapers\stock_img_3.jpeg"></td>
+<td><img src="D:\bunissness_analytics_course\Intenship_sarjen 2026\Practicals\week_4\wallpapers\stock_img_4.jpeg"></td>
+<td><img src="D:\bunissness_analytics_course\Intenship_sarjen 2026\Practicals\week_4\wallpapers\stock_img_1.jpeg"></td>
+<td><img src="D:\bunissness_analytics_course\Intenship_sarjen 2026\Practicals\week_4\wallpapers\stock_img_2.jpeg"></td>
+</tr>
+</table>
+
+<table width="100%" class="blue-table" cellpadding="10"> 
+    <tr> 
+        <th>Top Gainers</th> 
+        <th>Top Losers</th> 
+        <th>Popular Stocks</th> 
+        <th>Market Sectors</th> 
+    </tr>
+
+<tr>
+    <td>
+        <ol>
+            <li>Reliance Industries</li>
+            <li>TCS</li>
+            <li>Infosys</li>
+            <li>HDFC Bank</li>
+            <li>ICICI Bank</li>
+        </ol>
+    </td>
+
+    <td>
+        <ol>
+            <li>Adani Ports</li>
+            <li>Wipro</li>
+            <li>NTPC</li>
+            <li>Coal India</li>
+            <li>Power Grid</li>
+        </ol>
+    </td>
+
+    <td>
+        <ol>
+            <li>ITC Ltd</li>
+            <li>Larsen & Toubro</li>
+            <li>Bajaj Finance</li>
+            <li>Asian Paints</li>
+            <li>Maruti Suzuki</li>
+        </ol>
+    </td>
+
+    <td>
+        <ol>
+            <li>Information Technology</li>
+            <li>Banking</li>
+            <li>Energy</li>
+            <li>Pharma</li>
+            <li>Automobile</li>
+        </ol>
+    </td>
+</tr>
+</table>
+
+<table width="100%" class="form-area" cellpadding="15">
+<tr>
+
+<td>
+<form>
+<fieldset>
+<legend>Investor Query</legend>
+
+Name:<br>
+<input type="text"><br>
+
+Email:<br>
+<input type="email"><br>
+
+Phone:<br>
+<input type="tel"><br>
+
+Message:<br>
+<textarea rows="5"></textarea><br>
+
+<button type="submit">Send</button>
+</fieldset>
+</form>
+</td>
+
+<td>
+<form>
+<fieldset>
+<legend>Open Trading Account</legend>
+
+Full Name:<br>
+<input type="text"><br>
+
+Account Type:<br>
+<select>
+<option>Demat Account</option>
+<option>Trading Account</option>
+<option>Both</option>
+</select><br>
+
+Payment Method:<br>
+<select>
+<option>UPI</option>
+<option>Net Banking</option>
+<option>Debit Card</option>
+</select><br>
+
+<button type="submit">Register Now</button>
+</fieldset>
+</form>
+</td>
+
+</tr>
+</table>
+
+<table width="100%" class="footer">
+<tr>
+<td align="center">
+<div class="footer-box">
+<b>Invest Wisely • Indian Market Opportunities Await</b>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<p><b><i>Designed by Sahil Tralshawala</i></b></p>
+</td>
+</tr>
+</table>
+
+</body>
+</html>
