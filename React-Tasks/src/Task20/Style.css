@@ -1,0 +1,114 @@
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --border: #cbd5e1;
+  --accent: #2563eb;
+}
+
+.dark-theme {
+  --bg: #111827;
+  --surface: #1f2937;
+  --text: #f9fafb;
+  --muted: #cbd5e1;
+  --border: #374151;
+  --accent: #f59e0b;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.theme-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.theme-card {
+  width: min(100%, 440px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+}
+
+.theme-card-small {
+  width: min(100%, 380px);
+}
+
+.theme-kicker {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.theme-copy {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.theme-toggle-btns {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.theme-toggle-btns button,
+.theme-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.theme-toggle-btns button.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.theme-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(37, 99, 235, 0.08);
+  margin: 18px 0;
+}
+
+.theme-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.theme-badges span {
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.12);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.theme-link {
+  margin-top: 6px;
+}
