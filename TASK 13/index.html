@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Form</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="card">
+    <h2>🚀 Job Application</h2>
+
+    <div class="grid">
+        <div class="input-box">
+            <label>Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
+
+        <div class="input-box">
+            <label>Gender</label>
+            <select id="gender">
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+
+        <div class="input-box">
+            <label>Age</label>
+            <input type="number" id="age" placeholder="Enter age">
+        </div>
+    </div>
+
+    <div class="input-box">
+        <label>Position</label>
+        <div class="radio-group">
+            <label><input type="radio" name="role" value="Fullstack"> Fullstack</label>
+            <label><input type="radio" name="role" value="Backend"> Backend</label>
+            <label><input type="radio" name="role" value="Frontend"> Frontend</label>
+        </div>
+    </div>
+
+    <div class="input-box">
+        <label>Languages</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" value="React"> React</label>
+            <label><input type="checkbox" value="Node"> Node</label>
+            <label><input type="checkbox" value="Angular"> Angular</label>
+            <label><input type="checkbox" value="Java"> Java</label>
+            <label><input type="checkbox" value="Python"> Python</label>
+        </div>
+    </div>
+
+    <button onclick="addData()">Submit</button>
+
+    <a href="data.html">📊 View Records</a>
+</div>
+
+<script>
+function addData() {
+    let name = document.getElementById("name").value.trim();
+    let gender = document.getElementById("gender").value;
+    let age = document.getElementById("age").value;
+
+    let role = "";
+    document.getElementsByName("role").forEach(r => {
+        if (r.checked) role = r.value;
+    });
+
+    let pl = [];
+    document.querySelectorAll(".checkbox-group input").forEach(c => {
+        if (c.checked) pl.push(c.value);
+    });
+
+    if (name === "" || age === "" || role === "") {
+        alert("Please fill all fields!");
+        return;
+    }
+
+    let obj = { Name: name, Gender: gender, Age: age, Role: role, Language: pl };
+
+    let arr = JSON.parse(localStorage.getItem("arr")) || [];
+
+    let editIndex = localStorage.getItem("editIndex");
+
+    if (editIndex !== null) {
+        arr[editIndex] = obj;
+        localStorage.removeItem("editIndex");
+        alert("Updated Successfully");
+    } else {
+        arr.push(obj);
+        alert("Saved Successfully");
+    }
+
+    localStorage.setItem("arr", JSON.stringify(arr));
+}
+</script>
+
+</body>
+</html>

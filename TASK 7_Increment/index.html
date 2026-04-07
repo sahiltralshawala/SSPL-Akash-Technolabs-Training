@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var value = parseInt(localStorage.getItem("value"));
+        if(!localStorage.getItem("value")){
+            value=0;
+        }
+        function Increment() {
+            localStorage.setItem("value",++value);
+            document.getElementById("myForm").innerHTML = `Value of a is ${value}`;
+        }
+        function Decrement() {
+            localStorage.setItem("value", --value);
+            document.getElementById("myForm").innerHTML = `Value of a is ${value}`;
+        }
+    </script>
+</head>
+
+<body>
+    <p id="myForm"></p>
+    <button value="Increment" onclick="Increment()">Increment</button>
+    <button value="Decrement" onclick="Decrement()">Decrement</button>
+</body>
+
+</html>

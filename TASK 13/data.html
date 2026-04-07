@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h2>All Records</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>Role</th>
+                <th>Languages</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tableData"></tbody>
+    </table>
+
+    <a href="index.html">Back</a>
+</div>
+
+<script>
+let data = JSON.parse(localStorage.getItem("arr")) || "";
+
+function display() {
+    let output = "";
+
+    data.forEach((d, i) => {
+        output += `
+        <tr>
+            <td>${d.Name}</td>
+            <td>${d.Gender}</td>
+            <td>${d.Age}</td>
+            <td>${d.Role}</td>
+            <td>${d.Language.join(", ")}</td>
+            <td>
+                <button onclick="editData(${i})">Edit</button>
+                <button onclick="deleteData(${i})">Delete</button>
+            </td>
+        </tr>`;
+    });
+
+    document.getElementById("tableData").innerHTML = output;
+}
+
+function editData(i) {
+    localStorage.setItem("editIndex", i);
+    window.location = "index.html";
+}
+
+function deleteData(i) {
+    data.splice(i, 1);
+    localStorage.setItem("arr", JSON.stringify(data));
+    display();
+}
+
+display();
+</script>
+
+</body>
+</html>

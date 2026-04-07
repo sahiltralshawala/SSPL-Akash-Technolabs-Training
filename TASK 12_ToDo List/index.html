@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="todo">
+    <div class="main">
+
+        <div class="heading">
+            <h2>ToDo List</h2>
+        </div>
+
+        <div class="field">
+            <input type="text" id="t1" placeholder="Add Task Here...">
+            <button id="btn" onclick="add()">+Add</button>
+        </div>
+
+        <div id="p1"></div>
+
+    </div>
+</div>
+
+<script>
+let editIndex = -1;
+
+let arr = JSON.parse(localStorage.getItem("task")) || [];
+
+function display() {
+    let viewTask = "";
+
+    arr.forEach((task, i) => {
+        viewTask += `
+        <div class="view">
+            <span>${task}</span>
+            <div>
+                <button class="edit-btn" onclick="edit(${i})">Edit</button>
+                <button class="del-btn" onclick="del(${i})">Delete</button>
+            </div>
+        </div>`;
+    });
+
+    document.getElementById("p1").innerHTML = viewTask;
+}
+
+function add() {
+    let val = document.getElementById("t1").value.trim();
+
+    if (val === "") {
+        alert("Please enter a task!");
+        return;
+    }
+
+    if (editIndex === -1) {
+        arr.push(val);
+    } else {
+        arr[editIndex] = val;
+        editIndex = -1;
+        document.getElementById("btn").innerText = "+Add";
+    }
+
+    localStorage.setItem("task", JSON.stringify(arr));
+    document.getElementById("t1").value = "";
+    display();
+}
+
+function edit(i) {
+    document.getElementById("t1").value = arr[i];
+    editIndex = i;
+    document.getElementById("btn").innerText = "Update";
+}
+
+function del(i) {
+    arr.splice(i, 1);
+    localStorage.setItem("task", JSON.stringify(arr));
+    display();
+}
+
+display();
+</script>
+
+</body>
+</html>

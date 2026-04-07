@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .txt {
+            width: 300px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid grey;
+        }
+
+        .btn {
+            padding: 5px;
+            background-color: white;
+            border: 1px solid rgba(27, 87, 199, 0.74);
+            border-radius: 5px;
+            width: 100px;
+        }
+
+        .btn:hover {
+            background-color: rgba(27, 87, 199, 0.74);
+            border: 1px solid white;
+            color: white;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin: 30px;">
+        <div style="width: 24%;">
+            <fieldset style="border-radius: 10px; border:1px solid grey">
+                <legend>Login Page</legend>
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="Enter Email" class="txt" required>
+                <br /><br />
+                <label>Password:</label>
+                <input type="password" id="password" placeholder="Enter Password" class="txt" required>
+                <br /><br />
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <button class="btn" type="submit" onclick="Login()">LogIn</button>
+                    <label>Not Registered? <a href="Register.html">Register</a>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <script>
+        function Login() {
+            var myObj = localStorage.getItem("myObj");
+            myObj = JSON.parse(myObj)
+            if (myObj == [] || document.getElementsByName("email")[0].value != myObj.Email) {
+                alert("User Not Found")
+            }
+            else if (myObj.Email === document.getElementsByName("email")[0].value && myObj.Password === document.getElementById("password").value) {
+                alert("Login Successful");
+                location = "Home.html"
+            }
+            else {
+                alert("Please enter correct Password or Email!!!!")
+            }
+        }
+    </script>
+</body>
+
+</html>

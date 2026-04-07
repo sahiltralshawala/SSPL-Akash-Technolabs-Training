@@ -1,0 +1,118 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #06ff02, #06ff02);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main container */
+.todo {
+    width: 360px;
+}
+
+.main {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.heading h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.field {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.field input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.field input:focus {
+    border-color: #5f9cff;
+}
+
+#btn {
+    padding: 10px 15px;
+    background: #06ff02;
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+#btn:hover {
+    background: #06ff02;
+}
+
+#p1 {
+    margin-top: 10px;
+}
+
+.view {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f5f7fb;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.view:hover {
+    transform: scale(1.02);
+}
+
+.view button {
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#edit-btn {
+    background: #ffc107;
+    color: #000;
+    font-weight: bold;
+}
+
+#del-btn {
+    background: #e74c3c;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Hover effects */
+#edit-btn:hover {
+    background: #cffd00;
+}
+
+#del-btn:hover {
+    background: #c0392b;
+}

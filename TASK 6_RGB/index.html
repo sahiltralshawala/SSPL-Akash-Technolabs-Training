@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Create Color Maker</h2>
+
+    <div class="preview" id="preview">
+        <p id="colorValue">rgb(0, 0, 0)</p>
+    </div>
+
+    <div class="controls">
+
+        <div class="row">
+            <label>R</label>
+            <input type="range" id="red" min="0" max="255" value="0">
+        </div>
+
+        <div class="row">
+            <label>G</label>
+            <input type="range" id="green" min="0" max="255" value="0">
+        </div>
+
+        <div class="row">
+            <label>B</label>
+            <input type="range" id="blue" min="0" max="255" value="0">
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

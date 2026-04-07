@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .txt {
+            width: 300px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid grey;
+        }
+
+        .btn-update {
+            border: 1px solid rgba(199, 153, 27, 0.74);
+        }
+
+        .btn-logout {
+            border: 1px solid red;
+        }
+
+        .btn {
+            padding: 5px;
+            background-color: white;
+            border-radius: 5px;
+            width: 100px;
+        }
+
+        .btn:hover {
+            border: 1px solid white;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn-update:hover {
+            background-color: rgba(199, 153, 27, 0.74);
+        }
+
+        .btn-logout:hover {
+            background-color: rgba(199, 27, 27, 0.74);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex; justify-content:space-around; align-items:center ;">
+        <h2>User Profile</h2>
+        <button class="btn btn-logout" type="submit" onclick="location='Login.html'"
+            style="height: 30px;">Logout</button>
+    </div>
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin: 30px;">
+        <div style="width: 24%;">
+            <fieldset style="border-radius: 10px; border:1px solid grey">
+                <legend>User Profile</legend>
+                <label>Name:</label>
+                <input type="text" name="name" placeholder="Enter Name" class="txt">
+                <br /><br />
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="Enter Email" class="txt"
+                    style="background-color: rgba(185, 185, 185, 0.26);" readonly>
+                <br /><br />
+                <label>Password:</label>
+                <input type="password" id="password" placeholder="Enter Password" class="txt">
+                <br /><br />
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <button class="btn btn-update" type="submit" onclick="Update()">Update</button>
+                    <button class="btn btn-logout" type="submit" onclick="Delete()">Delete Profile</button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <script>
+        function Delete() {
+            var a = confirm("Are you sure, you want to Delete Profile?");
+            if (a) {
+                localStorage.clear();
+                alert("Profile Deleted Succussfully!!");
+                location = "Register.html";
+            }
+        }
+        function Display() {
+            var myObj = localStorage.getItem("myObj");
+            myObj = JSON.parse(myObj);
+            document.getElementsByName("name")[0].value = myObj.Name;
+            document.getElementsByName("email")[0].value = myObj.Email;
+            document.getElementById("password").value = myObj.Password;
+        }
+        function Update() {
+            var myObj = localStorage.getItem("myObj");
+            myObj = JSON.parse(myObj);
+            myObj = {
+                ...myObj,
+                Name: document.getElementsByName("name")[0].value,
+                Password: document.getElementById("password").value
+            };
+            localStorage.setItem("myObj", JSON.stringify(myObj));
+
+            alert("Profile updated successfully!");
+            Display();
+        }
+        Display();
+
+    </script>
+</body>
+
+</html>
