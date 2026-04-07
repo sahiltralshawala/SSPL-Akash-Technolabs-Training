@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="card">
+    <h2>🎯 Guess the Number</h2>
+    <p>Guess a number between <b>1 to 10</b></p>
+
+    <input type="number" id="guess" placeholder="Enter your guess">
+
+    <button onclick="checkGuess()">Check</button>
+
+    <p id="result"></p>
+</div>
+
+<script>
+// Generate random number on page load
+let randomNumber = Math.floor(Math.random() * 10) + 1;
+
+function checkGuess() {
+    let userGuess = document.getElementById("guess").value;
+
+    if (userGuess === "") {
+        alert("Please enter a number!");
+        return;
+    }
+
+    userGuess = parseInt(userGuess);
+
+    if (userGuess === randomNumber) {
+        document.getElementById("result").innerHTML =
+            "✅ Success! You guessed correctly 🎉";
+    } else {
+        document.getElementById("result").innerHTML =
+            "❌ Wrong guess! Try again";
+    }
+}
+</script>
+
+</body>
+</html>
